@@ -1,0 +1,323 @@
+/* ===========================================
+   IMPORTS ET CONFIGURATION DE BASE
+   =========================================== */
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+   /* Reset moderne et variables CSS */
+   :root {
+       /* Palette de couleurs moderne */
+       --primary-color: #6C63FF;    /* Violet vif pour les accents */
+       --secondary-color: #2A2A2A;  /* Gris foncé pour le texte */
+       --bg-color: #dacfd4;        /* Fond clair */
+       --accent-color: #FF6B6B;    /* Rouge corail pour les hover */
+       --gradient: linear-gradient(45deg, #6C63FF, #FF6B6B);
+   }
+   
+   /* Renitialisation global avec box-sizing moderne */
+   * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       font-family: 'Poppins', sans-serif;
+   }
+   
+   /* Style de base du body */
+   body {
+       background-color: var(--bg-color);
+       color: var(--secondary-color);
+       line-height: 1.7;
+   }
+   
+   /* ===========================================
+      HEADER ET NAVIGATION
+      =========================================== */
+   header {
+       /* Position fixe avec effet de flou */
+       position: fixed;
+       width: 100%;
+       top: 0;
+       z-index: 1000;
+       background: rgba(255, 255, 255, 0.9);
+       backdrop-filter: blur(10px);
+       border-bottom: 1px solid rgba(108, 99, 255, 0.1);
+   }
+   
+   /* Container de navigation avec flexbox */
+   nav {
+       max-width: 1400px;
+       margin: 0 auto;
+       padding: 1rem 2rem;
+   }
+   
+   /* Liste de navigation moderne */
+   nav ul {
+       display: flex;
+       justify-content: center;
+       gap: 3rem;
+       list-style: none;
+   }
+   
+   /* Style des liens de navigation */
+   nav ul li a {
+       text-decoration: none;
+       color: var(--secondary-color);
+       font-weight: 600;
+       position: relative;
+       padding: 0.5rem 0;
+   }
+   
+   /* Animation de soulignement au hover */
+   nav ul li a::after {
+       content: '';
+       position: absolute;
+       left: 0;
+       bottom: 0;
+       width: 0;
+       height: 2px;
+       background: var(--gradient);
+       transition: width 0.3s ease;
+   }
+   
+   nav ul li a:hover::after {
+       width: 100%;
+   }
+   
+   /* ===========================================
+      SECTIONS PRINCIPALES
+      =========================================== */
+   main {
+       margin-top: 80px;
+       padding: 2rem;
+       max-width: 1400px;
+       margin: 80px auto 0;
+   }
+   
+   /* Style commun des sections */
+   section {
+       margin-bottom: 6rem;
+       padding: 3rem;
+       border-radius: 20px;
+       background: white;
+       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+       transition: transform 0.3s ease;
+   }
+   
+   /* Animation au hover des sections */
+   section:hover {
+       transform: translateY(-5px);
+   }
+   
+   /* Style des titres */
+   h1 {
+       font-size: 3.5rem;
+       background: var(--gradient);
+       -webkit-background-clip: text;
+       color: transparent;
+       text-align: center;
+       margin-bottom: 2rem;
+   }
+   
+   h2 {
+       font-size: 2.5rem;
+       color: var(--primary-color);
+       margin-bottom: 2rem;
+       position: relative;
+   }
+   
+   /* Ligne décorative sous les h2 */
+   h2::after {
+       content: '';
+       display: block;
+       width: 60px;
+       height: 4px;
+       background: var(--gradient);
+       margin-top: 0.5rem;
+       border-radius: 2px;
+   }
+   
+   /* ===========================================
+      TABLEAU DES PROJETS
+      =========================================== */
+   table {
+       width: 100%;
+       border-collapse: separate;
+       border-spacing: 0 15px;
+   }
+   
+   /* En-têtes de tableau */
+   th {
+       background: var(--gradient);
+       color: white;
+       padding: 1.5rem;
+       text-align: left;
+       border-radius: 10px;
+   }
+   
+   /* Cellules de tableau */
+   td {
+       padding: 1.5rem;
+       background: #f8f9fa;
+       border-radius: 10px;
+       transition: transform 0.3s ease;
+   }
+   
+   /* Animation des lignes du tableau */
+   tr:hover td {
+       transform: scale(1.01);
+       background: #f1f3f5;
+   }
+   
+   /* ===========================================
+      FORMULAIRE DE CONTACT
+      =========================================== */
+   form {
+       display: grid;
+       gap: 2rem;
+       max-width: 800px;
+       margin: 0 auto;
+   }
+   
+   /* Style des labels */
+   label {
+       font-weight: 600;
+       color: var(--secondary-color);
+       margin-bottom: 0.5rem;
+   }
+   
+   /* Style des inputs et textarea */
+   input, textarea {
+       width: 100%;
+       padding: 1rem;
+       border: 2px solid #e9ecef;
+       border-radius: 10px;
+       transition: border-color 0.3s ease;
+       background: #f8f9fa;
+   }
+   
+   input:focus, textarea:focus {
+       outline: none;
+       border-color: var(--primary-color);
+       box-shadow: 0 0 0 4px rgba(108, 99, 255, 0.1);
+   }
+   
+   /* Style du bouton */
+   button {
+       padding: 1rem 2rem;
+       background: var(--gradient);
+       color: white;
+       border: none;
+       border-radius: 10px;
+       font-weight: 600;
+       cursor: pointer;
+       transition: transform 0.3s ease, box-shadow 0.3s ease;
+   }
+   
+   button:hover {
+       transform: translateY(-2px);
+       box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+   }
+   
+   /* ===========================================
+      FOOTER
+      =========================================== */
+   footer {
+       background: var(--secondary-color);
+       color: white;
+       padding: 3rem 0;
+       margin-top: 4rem;
+       text-align: center;
+   }
+   
+   footer h4{
+    margin: 3rem;
+    padding-top: 60px;
+    text-align: left;
+   }
+   /* Container du footer */
+   footer > div {
+       max-width: 1400px;
+       margin: 0 auto;
+       padding: 0 2rem;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       column-count: auto;
+   }
+   
+   /* Liste des réseaux sociaux */
+   footer ul {
+       display: flex;
+       gap: 2rem;
+       list-style: none;
+   }
+   
+   /* Liens du footer */
+   footer a {
+       color: white;
+       text-decoration: none;
+       transition: color 0.3s ease;
+       padding-left: 10px;
+      
+   }
+   
+   footer a:hover {
+       color: var(--accent-color);
+   }
+   
+   /* ===========================================
+      MEDIA QUERIES
+      =========================================== */
+   @media (max-width: 768px) {
+       /* Ajustements pour la navigation mobile */
+       nav ul {
+           flex-direction: column;
+           gap: 1rem;
+           text-align: center;
+       }
+   
+       /* Ajustements des sections */
+       section {
+           padding: 2rem 1rem;
+       }
+   
+       /* Ajustement des titres */
+       h1 {
+           font-size: 2.5rem;
+       }
+   
+       h2 {
+           font-size: 2rem;
+       }
+   
+       /* Ajustement du tableau */
+       table {
+           display: block;
+           overflow-x: auto;
+       }
+   
+       /* Ajustement du footer */
+       footer > div {
+           flex-direction: column;
+           gap: 2rem;
+           text-align: center;
+       }
+   }
+   
+   /* ===========================================
+      ANIMATIONS
+      =========================================== */
+   /* Animation de fade-in pour les sections */
+   @keyframes fadeIn {
+       from {
+           opacity: 0;
+           transform: translateY(20px);
+       }
+       to {
+           opacity: 1;
+           transform: translateY(0);
+       }
+   }
+   
+   section {
+       animation: fadeIn 0.8s ease forwards;
+   }
